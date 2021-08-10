@@ -15,6 +15,14 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+  triangle_sides = [a, b, c]
+  if triangle_sides.detect { |e| triangle_sides.count(e) > 2} then
+    return :equilateral
+  elsif triangle_sides.detect { |e| triangle_sides.count(e) > 1} then
+    return :isosceles
+  else
+    return :scalene
+  end
 end
 
 # Error class used in part 2.  No need to change this code.
