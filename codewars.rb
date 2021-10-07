@@ -56,3 +56,18 @@ def capitalize(s)
   result = s.gsub /.{1,2}/, &:capitalize
   [result, result.swapcase]
 end
+
+def kebabize(str)
+  str.tr("0-9", "").split("")
+  .map { |x| x.upcase == x ? "-" + x.downcase : x}.join().delete_prefix("-")
+end
+
+def autocomplete(input, dictionary)
+  dictionary.select {|x|
+    x.downcase.gsub(/[^0-9A-Za-z]/, '').start_with? input.downcase.gsub(/[^0-9A-Za-z]/, '').gsub(/\d+/, '')
+  }.take(5)
+end
+
+def string_transformer(str)
+  str.reverse.swapcase.gsub(/\w+/) { |s| s.reverse }
+end

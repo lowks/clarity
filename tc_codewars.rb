@@ -68,4 +68,26 @@ class CodeWarsTests < Test::Unit::TestCase
     assert_equal(capitalize("indexinglessons"),['InDeXiNgLeSsOnS', 'iNdExInGlEsSoNs'])
     assert_equal(capitalize("codingisafunactivity"),['CoDiNgIsAfUnAcTiViTy', 'cOdInGiSaFuNaCtIvItY'])
    end
+
+   def test_kebabize
+    assert_equal(kebabize('myCamelCasedString'), 'my-camel-cased-string')
+    assert_equal(kebabize('myCamelHas3Humps'), 'my-camel-has-humps')
+   end
+
+   def test_autocomplete
+      dictionary=[ 'abnormal',
+      'arm-wrestling',
+      'absolute',
+      'airplane',
+      'airport',
+      'amazing',
+      'apple',
+      'ball' ]
+      assert_equal(autocomplete('ai', dictionary), ['airplane','airport'])
+      assert_equal(autocomplete('a', dictionary), ['abnormal','arm-wrestling','absolute','airplane','airport'])
+  end
+
+  def test_string_transformer
+      assert_equal(string_transformer('Example   string'), 'STRING   eXAMPLE')
+  end
 end
