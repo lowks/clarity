@@ -71,3 +71,34 @@ end
 def string_transformer(str)
   str.reverse.swapcase.gsub(/\w+/) { |s| s.reverse }
 end
+
+def string_transformer_other(str)
+  str.split(/\b/).reverse.map(&:swapcase).join
+end
+
+def up_array(arr)
+  #your code here
+  if ! arr.kind_of?(Array) || ! arr.detect {|x| x < 0}.nil? || ! arr.detect {|x| x >= 10}.nil? || arr.empty?
+    nil
+  else
+    (arr.join.to_i + 1).digits.reverse
+  end
+end
+
+def find_uniq(arr)
+  counts = Hash.new(0)
+  arr.each { |v| counts[v] += 1 }
+  counts.select {|v, count| count == 1 }.keys.first
+end
+
+def find_uniq_better(arr)
+  arr.uniq.each { |x| return x if arr.count(x) == 1 }
+end
+
+def count_adjacent_pairs(s) 
+  s.downcase.split(" ").uniq.filter {|x| s.downcase.split(" ").count(x) >= 2 }.length  
+end
+
+def count_adjacent_pairs_better(s) 
+  s.downcase.split.chunk_while{|a,b| a==b}.count{|a| a.size > 1}
+end
