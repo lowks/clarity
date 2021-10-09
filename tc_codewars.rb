@@ -90,4 +90,25 @@ class CodeWarsTests < Test::Unit::TestCase
   def test_string_transformer
       assert_equal(string_transformer('Example   string'), 'STRING   eXAMPLE')
   end
+
+  def test_up_array
+   assert_equal(up_array([2,3,9]), [2,4,0])
+   assert_equal(up_array([4,3,2,5]), [4,3,2,6])
+   assert_equal(up_array([1,-9]), nil)
+  end
+
+  def test_find_uniq
+   assert_equal(find_uniq([1,1,1,1,0]), 0)
+   assert_equal(find_uniq([ 1, 1, 1, 2, 1, 1 ]), 2);
+   assert_equal(find_uniq([ 0, 0, 0.55, 0, 0 ]), 0.55);
+  end
+
+  def test_count_adjacent_pairs
+   assert_equal(count_adjacent_pairs(''), 0)
+   assert_equal(count_adjacent_pairs('orange Orange kiwi pineapple apple'), 1)
+   assert_equal(count_adjacent_pairs('banana banana banana'), 1)
+   assert_equal(count_adjacent_pairs('banana banana banana terracotta banana terracotta terracotta pie!'), 2)
+   assert_equal(count_adjacent_pairs('pineapple apple'), 0)
+   assert_equal(count_adjacent_pairs('FLOat flOat ord Ord'), 2)
+  end
 end
