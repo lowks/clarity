@@ -111,4 +111,33 @@ class CodeWarsTests < Test::Unit::TestCase
    assert_equal(count_adjacent_pairs('pineapple apple'), 0)
    assert_equal(count_adjacent_pairs('FLOat flOat ord Ord'), 2)
   end
+
+  def test_string_breakers
+   assert_equal(string_breakers(5, 'This is an example string'), "Thisi"+"\n"+"sanex"+"\n"+"ample"+"\n"+"strin"+"\n"+"g") 
+  end
+
+  def test_capitalize_other
+   assert_equal(capitalize_other("abcdef",[1,2,5]),'aBCdeF')
+   assert_equal(capitalize_other("abcdef",[1,2,5,100]),'aBCdeF',)
+   assert_equal(capitalize_other("codewars",[1,3,5,50]),'cOdEwArs')
+   assert_equal(capitalize_other("abracadabra",[2,6,9,10]),'abRacaDabRA')
+   assert_equal(capitalize_other("codewarriors",[5]),'codewArriors')
+   assert_equal(capitalize_other("indexinglessons",[0]),'Indexinglessons')
+  end
+
+  def test_reverse_alternate
+   assert_equal(reverse_alternate("Did it work?"), "Did ti work?")
+   assert_equal(reverse_alternate("I really hope it works this time..."), "I yllaer hope ti works siht time...")
+   assert_equal(reverse_alternate("Reverse this string, please!"), "Reverse siht string, !esaelp")
+   assert_equal(reverse_alternate("Have a beer"), "Have a beer")
+   assert_equal(reverse_alternate("UA5n19 18dHWa7.C3GgFl e2lZJ3WgJq VFqmmA!5 d8qLwVY4thUTJzK 8iyc1Zyt?Qg2 bcpturRfl?vRez3r qsDia9QXJU4AUStv dUw7CDRD18. Dw87F qYyhPV GMcT,EwSCL8V rrgE!x85ye5,,RhG jE ,7jkO cnPT5VcEfGf5 mU2cq5SCIUyVUX! 6NJmFfjIDk EEP4o mdyZ3?LWkLPH"), "UA5n19 lFgG3C.7aWHd81 e2lZJ3WgJq 5!AmmqFV d8qLwVY4thUTJzK 2gQ?tyZ1cyi8 bcpturRfl?vRez3r vtSUA4UJXQ9aiDsq dUw7CDRD18. F78wD qYyhPV V8LCSwE,TcMG rrgE!x85ye5,,RhG Ej ,7jkO 5fGfEcV5TPnc mU2cq5SCIUyVUX! kDIjfFmJN6 EEP4o HPLkWL?3Zydm")
+   assert_equal(reverse_alternate(""), "")
+  end
+
+  def test_more_zeroes
+   assert_equal(more_zeros('abcde'),['a','b','d'])
+   assert_equal(more_zeros('Great job!'),['a', ' ', 'b', '!'])
+   assert_equal(more_zeros('DIGEST'),['D','I','E','T'])
+   assert_equal(more_zeros('abcdeabcde'),['a','b','d'],'Should not return duplicates values')
+  end
 end
