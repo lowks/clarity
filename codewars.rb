@@ -102,3 +102,31 @@ end
 def count_adjacent_pairs_better(s) 
   s.downcase.split.chunk_while{|a,b| a==b}.count{|a| a.size > 1}
 end
+
+def string_breakers(n, st)
+  st.split(" ").join("").scan(/.{1,#{n}}/).join("\n")
+end
+
+def capitalize_other(s,ind)
+  s.split("").map.with_index {|x, i| ind.member?(i) ? x.upcase: x }.join()
+end
+
+def reverse_alternate(string)
+  string.split(" ").map.with_index {|x, i| i % 2 == 1 ? x.reverse(): x}.join(" ")
+end
+
+def more_zeros(s)
+  s.unpack('C*').map {|e| [e.chr, e.to_s(2)]}
+                .select { |x, y| y.count("0") > y.count("1") }
+                .flat_map {|i| i[0] }
+                .uniq
+end
+
+def more_zeroes_nice(s)
+    s.chars.select { |c| 
+      bits = c.ord.to_s(2)
+      ones = bits.count('1')
+      zeroes = bits.count('0')
+      zeroes > ones
+      }.uniq
+end
