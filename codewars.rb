@@ -130,3 +130,31 @@ def more_zeroes_nice(s)
       zeroes > ones
       }.uniq
 end
+
+def encrypt_this(text)
+  text.split(" ").map {|x| 
+    if x.length() == 1
+      x.codepoints.to_a[0].to_s
+    elsif x.length() == 2
+      x.codepoints.to_a[0].to_s + x.split("").last()
+    else
+      x.codepoints.to_a[0].to_s + x[1..x.length].to_str[-1] + x[2..x.length-2] + x[1..x.length-1].to_str[0]
+    end
+  }.join(" ")
+end
+
+def lowest_product(input)
+  input.length < 4 ? "Number is too small" : input.to_i.digits.sort.take(4).inject(:*)
+end
+
+def permute_a_palindrome(input)
+  hm = Hash.new()
+  input.split("").each {|x| hm.has_key?(x)? hm[x] += 1 : hm[x] = 1}
+  if hm.keys().length == 1
+    true
+  elsif hm.values().count(1) > 1 || hm.values().to_a.select{|n| n != 1 && n % 2 == 1}.count() != 0
+    false
+  else 
+    true
+  end
+end
