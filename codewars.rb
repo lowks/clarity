@@ -158,3 +158,41 @@ def permute_a_palindrome(input)
     true
   end
 end
+
+def make_sentence parts
+  parts.join(' ').gsub(' , ', ', ').gsub(' .', '') + "."
+end
+
+def encode(s)
+  s.gsub('a', '1')
+   .gsub('e', '2')
+   .gsub('i', '3')
+   .gsub('o', '4')
+   .gsub('u', '5')
+end
+
+def decode(s)
+  s.gsub('1', 'a')
+   .gsub('2', 'e')
+   .gsub('3', 'i')
+   .gsub('4', 'o')
+   .gsub('5', 'u')
+end
+
+def encode_other(s)
+  s.tr("aeiou", "12345")
+end
+
+def decode_other(s)
+  s.tr("12345", "aeiou")
+end
+
+def letter_count(str)
+  hm1 = Hash.new()
+  str.chars.map{|x| x.to_sym }.map {|x| hm1.has_key?(x) ? hm1[x] += 1 : hm1[x] = 1 }
+  hm1
+end
+
+def letter_count_better(str)
+  str.chars.each_with_object(Hash.new(0)) { |c, h| h[c.to_sym] += 1 }
+end
