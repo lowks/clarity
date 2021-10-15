@@ -167,4 +167,21 @@ class CodeWarsTests < Test::Unit::TestCase
    assert_equal(permute_a_palindrome("abcdefghba"), false)
    assert_equal(permute_a_palindrome(""), true)
  end
+
+ def test_make_sentence
+   assert_equal(make_sentence(['hello', 'world']), 'hello world.')
+ end
+
+ def test_encode_decode
+   assert_equal(encode('hello'), 'h2ll4')
+   assert_equal(encode('How are you today?'), 'H4w 1r2 y45 t4d1y?')
+   assert_equal(encode('This is an encoding test.'), 'Th3s 3s 1n 2nc4d3ng t2st.')
+   assert_equal(decode('h2ll4'), 'hello')
+ end
+
+ def test_letter_count
+   assert_equal(letter_count('codewars'), {:a=>1, :c=>1, :d=>1, :e=>1, :o=>1, :r=>1, :s=>1, :w=>1})
+   assert_equal(letter_count('activity'), {:a=>1, :c=>1, :i=>2, :t=>2, :v=>1, :y=>1})
+   assert_equal(letter_count('arithmetics'), {:a=>1, :c=>1, :e=>1, :h=>1, :i=>2, :m=>1, :r=>1, :s=>1, :t=>2})
+ end
 end
