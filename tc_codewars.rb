@@ -184,4 +184,14 @@ class CodeWarsTests < Test::Unit::TestCase
    assert_equal(letter_count('activity'), {:a=>1, :c=>1, :i=>2, :t=>2, :v=>1, :y=>1})
    assert_equal(letter_count('arithmetics'), {:a=>1, :c=>1, :e=>1, :h=>1, :i=>2, :m=>1, :r=>1, :s=>1, :t=>2})
  end
+
+ def test_sum_dig_pow
+   assert_equal( sum_dig_pow(1, 10), [1, 2, 3, 4, 5, 6, 7, 8, 9])
+   assert_equal(sum_dig_pow(1, 100), [1, 2, 3, 4, 5, 6, 7, 8, 9, 89])
+   assert_equal(sum_dig_pow(10, 100),  [89])
+   assert_equal(sum_dig_pow(90, 100), [])
+   assert_equal(sum_dig_pow(90, 150), [135])
+   assert_equal(sum_dig_pow(50, 150), [89, 135])
+   assert_equal(sum_dig_pow(10, 150), [89, 135])
+ end
 end
