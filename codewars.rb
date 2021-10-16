@@ -196,3 +196,7 @@ end
 def letter_count_better(str)
   str.chars.each_with_object(Hash.new(0)) { |c, h| h[c.to_sym] += 1 }
 end
+
+def sum_dig_pow(a, b)
+  (a..b).to_a.select {|x| x == x.digits.reverse.each_with_index.reduce(0) { |number, index| number + index[0]**(index[1]+1)}}
+end
