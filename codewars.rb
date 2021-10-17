@@ -200,3 +200,7 @@ end
 def sum_dig_pow(a, b)
   (a..b).to_a.select {|x| x == x.digits.reverse.each_with_index.reduce(0) { |number, index| number + index[0]**(index[1]+1)}}
 end
+
+def data_reverse(data)
+  data.each_slice(8).to_a.reverse().flatten
+end
