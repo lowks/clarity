@@ -194,4 +194,14 @@ class CodeWarsTests < Test::Unit::TestCase
    assert_equal(sum_dig_pow(50, 150), [89, 135])
    assert_equal(sum_dig_pow(10, 150), [89, 135])
  end
+
+ def test_data_reverse
+   assert_equal(data_reverse(
+  [1,1,1,1,1,1,1,1, 0,0,0,0,0,0,0,0, 0,0,0,0,1,1,1,1, 1,0,1,0,1,0,1,0] ),
+  [1,0,1,0,1,0,1,0, 0,0,0,0,1,1,1,1, 0,0,0,0,0,0,0,0, 1,1,1,1,1,1,1,1] )
+
+   assert_equal(data_reverse(
+  [0,0,1,1,0,1,1,0, 0,0,1,0,1,0,0,1] ),
+  [0,0,1,0,1,0,0,1, 0,0,1,1,0,1,1,0] )
+end
 end
