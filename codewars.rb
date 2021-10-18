@@ -204,3 +204,7 @@ end
 def data_reverse(data)
   data.each_slice(8).to_a.reverse().flatten
 end
+
+def number_format(n)
+  n > 0 ? n.abs().to_s.chars.reverse.each_slice(3).map(&:join).join(",").reverse : "-"+n.abs().to_s.chars.reverse.each_slice(3).map(&:join).join(",").reverse
+end

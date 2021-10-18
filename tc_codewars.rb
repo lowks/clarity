@@ -204,4 +204,12 @@ class CodeWarsTests < Test::Unit::TestCase
   [0,0,1,1,0,1,1,0, 0,0,1,0,1,0,0,1] ),
   [0,0,1,0,1,0,0,1, 0,0,1,1,0,1,1,0] )
 end
+
+def test_numbers_format
+   assert_equal(number_format(100000), "100,000")
+   assert_equal(number_format(5678545), "5,678,545")
+   assert_equal(number_format(-420902), "-420,902")
+   assert_equal(number_format(-3), "-3")
+   assert_equal(number_format(-1003), "-1,003")
+end
 end
