@@ -212,4 +212,12 @@ def test_numbers_format
    assert_equal(number_format(-3), "-3")
    assert_equal(number_format(-1003), "-1,003")
 end
+
+def test_numbers_with_digit_inside
+   assert_equal(numbers_with_digit_inside(5, 6), [0, 0, 0])
+   assert_equal(numbers_with_digit_inside(7, 6), [1, 6, 6])
+   assert_equal(numbers_with_digit_inside(11, 1), [3, 22, 110])
+   assert_equal(numbers_with_digit_inside(20, 0), [2, 30, 200])
+   assert_equal(numbers_with_digit_inside(44, 4), [9, 286, 5955146588160])
+end
 end

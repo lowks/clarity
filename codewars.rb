@@ -208,3 +208,8 @@ end
 def number_format(n)
   n > 0 ? n.abs().to_s.chars.reverse.each_slice(3).map(&:join).join(",").reverse : "-"+n.abs().to_s.chars.reverse.each_slice(3).map(&:join).join(",").reverse
 end
+
+def numbers_with_digit_inside(x, d)
+  selected = (1..x).to_a.select {|x| x.to_s.include?(d.to_s)}
+  [ selected.count(), selected.sum(), selected.inject(:*) || 0 ]
+end
