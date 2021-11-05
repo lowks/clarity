@@ -220,4 +220,11 @@ def test_numbers_with_digit_inside
    assert_equal(numbers_with_digit_inside(20, 0), [2, 30, 200])
    assert_equal(numbers_with_digit_inside(44, 4), [9, 286, 5955146588160])
 end
+
+def test_domain_name
+   assert_equal(domain_name("http://google.com"), "google")
+   assert_equal(domain_name("http://google.co.jp"), "google")
+   assert_equal(domain_name("www.xakep.ru"), "xakep")
+   assert_equal(domain_name("https://youtube.com"), "youtube")
+end
 end

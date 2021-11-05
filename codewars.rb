@@ -213,3 +213,7 @@ def numbers_with_digit_inside(x, d)
   selected = (1..x).to_a.select {|x| x.to_s.include?(d.to_s)}
   [ selected.count(), selected.sum(), selected.inject(:*) || 0 ]
 end
+
+def domain_name(url)
+  url.gsub("www.", '').gsub(/https?:\/\//, '').split(".")[0]
+end
