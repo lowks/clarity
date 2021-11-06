@@ -217,3 +217,18 @@ end
 def domain_name(url)
   url.gsub("www.", '').gsub(/https?:\/\//, '').split(".")[0]
 end
+
+OPPOSITE = {
+  "NORTH" => "SOUTH",
+  "SOUTH" => "NORTH",
+  "EAST"  => "WEST",
+  "WEST"  => "EAST"
+}
+
+def dirReduc(arr)
+    output = Array.new
+    arr.each do |direction|
+      OPPOSITE[direction] == output.last ? output.pop : output.push(direction)
+    end
+    output
+end

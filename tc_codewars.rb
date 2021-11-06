@@ -227,4 +227,12 @@ def test_domain_name
    assert_equal(domain_name("www.xakep.ru"), "xakep")
    assert_equal(domain_name("https://youtube.com"), "youtube")
 end
+
+def test_dirReduc
+   a = ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]
+   assert_equal(dirReduc(a), ["WEST"])
+   u=["NORTH", "WEST", "SOUTH", "EAST"]
+   assert_equal(dirReduc(u), ["NORTH", "WEST", "SOUTH", "EAST"])
+end
+
 end
