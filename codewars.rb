@@ -232,3 +232,8 @@ def dirReduc(arr)
     end
     output
 end
+
+def password_validation string
+  regex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,}$/
+  string =~ regex ? 0 : 1
+end
