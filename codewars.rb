@@ -237,3 +237,7 @@ def password_validation string
   regex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,}$/
   string =~ regex ? 0 : 1
 end
+
+def sortme( courses )
+  courses.sort_by { |x| [x.split("-")[1], x.split("-")[0]] }
+end
