@@ -274,4 +274,10 @@ def test_regex_password_validation
    assert_equal((password_validation('ABC123abc'))==0, true)
    assert_equal((password_validation('Password123'))==0, true)
 end
+def test_sortme
+   assert_equal(sortme(["web-1305","site-1305","web-1304","site-1304"]), ["site-1304", "web-1304", "site-1305", "web-1305"])
+   assert_equal(sortme(['aeb-1305', 'site-1305', 'play-1215', 'web-1304', 'site-1304', 'beb-1305']), ["play-1215", "site-1304", "web-1304", "aeb-1305", "beb-1305", "site-1305"])
+   assert_equal(sortme([]), [])
+   assert_equal(sortme(['aeb-1305', 'aeb-1305']), ['aeb-1305', 'aeb-1305'])
+end
 end
