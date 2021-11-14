@@ -280,4 +280,9 @@ def test_sortme
    assert_equal(sortme([]), [])
    assert_equal(sortme(['aeb-1305', 'aeb-1305']), ['aeb-1305', 'aeb-1305'])
 end
+
+def test_to_nato
+   assert_equal(to_nato('If you can read'), "India Foxtrot Yankee Oscar Uniform Charlie Alfa November Romeo Echo Alfa Delta")
+   assert_equal(to_nato('Did not see that coming'), "Delta India Delta November Oscar Tango Sierra Echo Echo Tango Hotel Alfa Tango Charlie Oscar Mike India November Golf")
+end
 end
