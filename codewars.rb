@@ -241,3 +241,19 @@ end
 def sortme( courses )
   courses.sort_by { |x| [x.split("-")[1], x.split("-")[0]] }
 end
+
+def to_nato(words)
+	# action
+  nato_keys =  {
+    "A": "Alfa", "B": "Bravo",   "C": "Charlie",
+    "D": "Delta",  "E": "Echo",    "F": "Foxtrot",
+    "G": "Golf",   "H": "Hotel",   "I": "India",
+    "J": "Juliett","K": "Kilo",    "L": "Lima",
+    "M": "Mike",   "N": "November","O": "Oscar",
+    "P": "Papa",   "Q": "Quebec",  "R": "Romeo",
+    "S": "Sierra", "T": "Tango",   "U": "Uniform",
+    "V": "Victor", "W": "Whiskey", "X": "Xray",
+    "Y": "Yankee", "Z": "Zulu", " ": ""
+  }
+  words.chars.map { |x| nato_keys.fetch(x.upcase.to_sym, x) }.reject(&:empty?).join(' ')
+end
