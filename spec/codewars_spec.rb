@@ -25,4 +25,11 @@ RSpec.describe "sure pass" do
        expect(sum_digits(-32)).to eq 5
      end
    end
+   context "test pairs" do
+     it "test pairs" do
+       expect(pairs([0,0,0,0])).to eq 2
+       expect(pairs([1,2,3,4])).to eq 0
+       expect(pairs([])).to eq 0
+     end
+   end
 end
