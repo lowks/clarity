@@ -257,3 +257,7 @@ def to_nato(words)
   }
   words.chars.map { |x| nato_keys.fetch(x.upcase.to_sym, x) }.reject(&:empty?).join(' ')
 end
+
+def pairs(arr)
+  arr.group_by(&:itself).transform_values{ |v| v.size / 2 }.values.sum
+end
