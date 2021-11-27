@@ -32,4 +32,12 @@ RSpec.describe "sure pass" do
        expect(pairs([])).to eq 0
      end
    end
+
+   context "capitalize" do
+     it "test capitalize" do
+       expect(capitalize("abcdef")).to eq ['AbCdEf', 'aBcDeF']
+       expect(capitalize("codewars")).to eq ['CoDeWaRs', 'cOdEwArS']
+       expect(capitalize("abracadabra")).to eq ['AbRaCaDaBrA', 'aBrAcAdAbRa']
+     end
+   end
 end
