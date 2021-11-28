@@ -33,9 +33,11 @@ RSpec.describe "sure pass" do
      end
    end
 
-   context "capitalize" do
+   context "Testing capitalize" do
      it "test capitalize" do
        expect(capitalize("abcdef")).to eq ['AbCdEf', 'aBcDeF']
+       expect(capitalize("abcdef")).not_to eq [] or eq ''
+       expect(capitalize("abcdef")).to be_a_kind_of Array
        expect(capitalize("codewars")).to eq ['CoDeWaRs', 'cOdEwArS']
        expect(capitalize("abracadabra")).to eq ['AbRaCaDaBrA', 'aBrAcAdAbRa']
      end
