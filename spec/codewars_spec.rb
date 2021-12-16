@@ -42,4 +42,12 @@ RSpec.describe "sure pass" do
        expect(capitalize("abracadabra")).to eq ['AbRaCaDaBrA', 'aBrAcAdAbRa']
      end
    end
+
+   context "Testing isogram" do
+     it "test isogram" do
+        expect(is_isogram("Dermatoglyphics")).to be_truthy
+        expect(is_isogram("isogram")).to be_truthy
+        expect(is_isogram("aba")).to be_falsey
+     end 
+   end
 end
