@@ -1,6 +1,6 @@
 require_relative '../codewars'
 
-RSpec.describe "sure pass" do
+RSpec.describe "Tests for codewars" do
    context "count smileys" do
      it "count smileys" do
        expect(count_smileys([":-)"])).to eq 1
