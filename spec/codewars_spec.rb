@@ -56,4 +56,10 @@ RSpec.describe "Tests for codewars" do
 	expect(kebabize('myCamelCasedString')).to eq 'my-camel-cased-string'
      end
    end
+
+   context "Testing find_uniq" do
+     it "test find_uniq" do
+	expect(find_uniq([ 1, 1, 1, 2, 1, 1 ])).to eq 2
+     end
+   end
 end
