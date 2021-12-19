@@ -62,4 +62,10 @@ RSpec.describe "Tests for codewars" do
 	expect(find_uniq([ 1, 1, 1, 2, 1, 1 ])).to eq 2
      end
    end
+
+   context "Testing count_adjacent_pairs" do
+     it "test count_adjacent_pairs" do
+        expect(count_adjacent_pairs('orange Orange kiwi pineapple apple')). to eq 1
+     end
+   end
 end
