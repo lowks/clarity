@@ -68,4 +68,10 @@ RSpec.describe "Tests for codewars" do
         expect(count_adjacent_pairs('orange Orange kiwi pineapple apple')). to eq 1
      end
    end
+
+   context "Testing reverse_alternative" do
+     it "test reverse_alternative" do
+         expect(reverse_alternate("Did it work?")).to eq "Did ti work?"
+     end
+   end
 end
